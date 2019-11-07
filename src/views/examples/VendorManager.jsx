@@ -27,7 +27,7 @@ import {
   FormGroup
 } from "reactstrap";
 // core components
-import Header from "./VendorManagerHeader.jsx";
+import VendorManagerHeader from "./VendorManagerHeader.jsx";
 
 class VendorManager extends React.Component {
   state = {
@@ -40,7 +40,7 @@ class VendorManager extends React.Component {
     const { showFilterArea, showFilterStatus, showFilterScore } = this.state;
     return (
       <>
-        <Header />
+        <VendorManagerHeader />
         {/* Page content */}
         <Container className=" mt--7" fluid>
           {/* Table */}
@@ -114,21 +114,36 @@ class VendorManager extends React.Component {
                           <DropdownItem>
                             <FormGroup check>
                               <Label check>
-                                <Input type="checkbox" checked /> Above 2,000
+                                <Input
+                                  type="checkbox"
+                                  checked
+                                  onChange={() => {}}
+                                />{" "}
+                                Above 2,000
                               </Label>
                             </FormGroup>
                           </DropdownItem>
                           <DropdownItem>
                             <FormGroup check>
                               <Label check>
-                                <Input type="checkbox" checked /> 1,000 - 2,000
+                                <Input
+                                  type="checkbox"
+                                  checked
+                                  onChange={() => {}}
+                                />{" "}
+                                1,000 - 2,000
                               </Label>
                             </FormGroup>
                           </DropdownItem>
                           <DropdownItem>
                             <FormGroup check>
                               <Label check>
-                                <Input type="checkbox" checked /> Under 1,000
+                                <Input
+                                  type="checkbox"
+                                  checked
+                                  onChange={() => {}}
+                                />{" "}
+                                Under 1,000
                               </Label>
                             </FormGroup>
                           </DropdownItem>

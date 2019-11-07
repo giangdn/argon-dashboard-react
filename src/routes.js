@@ -6,6 +6,7 @@ import Login from "views/examples/Login.jsx";
 import Tables from "views/examples/Tables.jsx";
 import Icons from "views/examples/Icons.jsx";
 import VendorManager from "views/examples/VendorManager.jsx";
+import NewSupplier from "./views/examples/NewSupplier";
 
 var routes = [
   {
@@ -32,21 +33,21 @@ var routes = [
     isSub: true
   },
   {
-    path: "/vendors",
-    name: "Create New",
+    path: "/new-supplier",
+    name: "Create New Supplier",
     icon: "fa fa-plus text-info",
-    component: VendorManager,
+    component: NewSupplier,
     layout: "/admin",
     isSub: true
   },
-  {
-    path: "/vendors",
-    name: "Invite New Supplier",
-    icon: "fa fa-envelope-open text-info",
-    component: VendorManager,
-    layout: "/admin",
-    isSub: true
-  },
+  // {
+  //   path: "/vendors",
+  //   name: "Invite New Supplier",
+  //   icon: "fa fa-envelope-open text-info",
+  //   component: VendorManager,
+  //   layout: "/admin",
+  //   isSub: true
+  // },
   {
     path: "/vendors",
     name: "Rate Card",

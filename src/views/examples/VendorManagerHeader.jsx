@@ -1,10 +1,31 @@
 import React from "react";
 
 // reactstrap components
-import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  Container,
+  Row,
+  Col,
+  Modal,
+  Button,
+  Form,
+  FormGroup,
+  Input
+} from "reactstrap";
 
 class VendorManagerHeader extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showInvitationModal: false
+    };
+  }
+
   render() {
+    const { showInvitationModal } = this.state;
     return (
       <>
         <div className="header bg-gradient-info pb-8 pt-5 pt-md-8">
@@ -109,7 +130,7 @@ class VendorManagerHeader extends React.Component {
                             tag="h5"
                             className="text-uppercase text-muted mb-0"
                           >
-                            Invitation
+                            Sent Invitations
                           </CardTitle>
                           <span className="h2 font-weight-bold mb-0">49</span>
                         </div>
@@ -120,10 +141,127 @@ class VendorManagerHeader extends React.Component {
                         </Col>
                       </Row>
                       <p className="mt-3 mb-0 text-muted text-sm">
-                        <span className="text-success mr-2">
-                          <i className="fas fa-arrow-up" /> 12%
-                        </span>{" "}
-                        <span className="text-nowrap">Since last month</span>
+                        <Button
+                          color="link"
+                          className="p-0 m-0"
+                          onClick={() => {
+                            console.log("test");
+                            this.setState({
+                              showInvitationModal: !showInvitationModal
+                            });
+                          }}
+                        >
+                          <i className="fas fa-plus" /> Invite new supplier
+                        </Button>
+                        <Modal
+                          className="modal-dialog-centered"
+                          isOpen={showInvitationModal}
+                          toggle={() => {
+                            this.setState({
+                              showInvitationModal: !showInvitationModal
+                            });
+                          }}
+                        >
+                          <div className="modal-header">
+                            <h3 className="modal-title" id="exampleModalLabel">
+                              Invite New Supplier
+                            </h3>
+                            <button
+                              aria-label="Close"
+                              className="close"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() =>
+                                this.setState({
+                                  showInvitationModal: !showInvitationModal
+                                })
+                              }
+                            >
+                              <span aria-hidden={true}>×</span>
+                            </button>
+                          </div>
+                          <div className="modal-body">
+                            <Form>
+                              <div>
+                                <Row>
+                                  <Col lg="12">
+                                    <FormGroup>
+                                      <label
+                                        className="form-control-label"
+                                        htmlFor="input-username"
+                                      >
+                                        Supplier Name
+                                      </label>
+                                      <Input
+                                        className="form-control-alternative"
+                                        defaultValue=""
+                                        id="input-username"
+                                        placeholder="Input Vendor Name"
+                                        type="text"
+                                      />
+                                    </FormGroup>
+                                  </Col>
+                                </Row>
+                                <Row>
+                                  <Col lg="12">
+                                    <FormGroup>
+                                      <label
+                                        className="form-control-label"
+                                        htmlFor="input-email"
+                                      >
+                                        Email Address
+                                      </label>
+                                      <Input
+                                        className="form-control-alternative"
+                                        id="input-email"
+                                        placeholder="Input Email Address"
+                                        type="email"
+                                      />
+                                    </FormGroup>
+                                  </Col>
+                                </Row>
+                                <Row>
+                                  <Col lg="12">
+                                    <FormGroup>
+                                      <label
+                                        className="form-control-label"
+                                        htmlFor="input-email"
+                                      >
+                                        Phone/Mobile
+                                      </label>
+                                      <Input
+                                        className="form-control-alternative"
+                                        id="input-email"
+                                        defaultValue="+81"
+                                        placeholder="Input Phone/Mobile"
+                                        type="number"
+                                      />
+                                    </FormGroup>
+                                  </Col>
+                                </Row>
+                                <Row>
+                                  <Col lg="12">
+                                    <FormGroup>
+                                      <label
+                                        className="form-control-label"
+                                        htmlFor="input-email"
+                                      >
+                                        Attachments
+                                      </label>
+                                      <br></br>
+                                      <Button>Add File</Button>
+                                    </FormGroup>
+                                  </Col>
+                                </Row>
+                              </div>
+                            </Form>
+                          </div>
+                          <div className="modal-footer">
+                            <Button color="primary" type="button">
+                              Send
+                            </Button>
+                          </div>
+                        </Modal>
                       </p>
                     </CardBody>
                   </Card>

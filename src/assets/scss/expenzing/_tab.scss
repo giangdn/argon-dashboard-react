@@ -1,0 +1,32 @@
+.nav-tabs {
+  background-color: #f6f9fc;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  .nav-link {
+    padding: 0.75rem 1rem;
+    color: #5e6e82 !important;
+    &:hover {
+      cursor: pointer;
+      border-color: transparent;
+      color: #5e6e82 !important;
+    }
+  }
+  .nav-link.active {
+    background-color: #edf2f9;
+    border-color: #d8e2ef #d8e2ef #edf2f9;
+    color: #5e72e4 !important;
+  }
+  .nav-item.show {
+    .nav-link {
+      background-color: #edf2f9;
+      border-color: #d8e2ef #d8e2ef #edf2f9;
+      color: #5e72e4 !important;
+    }
+  }
+}
+
+.tab-content {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  background-color: #ffffff;
+}
