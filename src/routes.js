@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Index from "views/Index.jsx";
 import Profile from "views/examples/Profile.jsx";
 import Maps from "views/examples/Maps.jsx";
@@ -22,6 +5,7 @@ import Register from "views/examples/Register.jsx";
 import Login from "views/examples/Login.jsx";
 import Tables from "views/examples/Tables.jsx";
 import Icons from "views/examples/Icons.jsx";
+import VendorManager from "views/examples/VendorManager.jsx";
 
 var routes = [
   {
@@ -32,46 +16,94 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/icons",
-    name: "Icons",
-    icon: "ni ni-planet text-blue",
-    component: Icons,
+    path: "/vendors",
+    name: "Manage Supplier",
+    icon: "fas fa-handshake text-blue",
+    component: VendorManager,
     layout: "/admin"
   },
   {
+    path: "/vendors",
+    name: "All Suppliers",
+    icon: "fa fa-th text-info",
+    component: VendorManager,
+    badge: 280,
+    layout: "/admin",
+    isSub: true
+  },
+  {
+    path: "/vendors",
+    name: "Create New",
+    icon: "fa fa-plus text-info",
+    component: VendorManager,
+    layout: "/admin",
+    isSub: true
+  },
+  {
+    path: "/vendors",
+    name: "Invite New Supplier",
+    icon: "fa fa-envelope-open text-info",
+    component: VendorManager,
+    layout: "/admin",
+    isSub: true
+  },
+  {
+    path: "/vendors",
+    name: "Rate Card",
+    icon: "fa fa-star text-info",
+    component: VendorManager,
+    layout: "/admin",
+    isSub: true
+  },
+  {
+    path: "/vendors",
+    name: "Evaluation",
+    icon: "fa fa-poll-h text-info",
+    component: VendorManager,
+    layout: "/admin",
+    isSub: true
+  },
+  {
     path: "/maps",
-    name: "Maps",
-    icon: "ni ni-pin-3 text-orange",
+    name: "Procurement",
+    icon: "fa fa-shopping-basket text-blue",
     component: Maps,
     layout: "/admin"
   },
   {
     path: "/user-profile",
-    name: "User Profile",
-    icon: "ni ni-single-02 text-yellow",
+    name: "Invoice Authorization",
+    icon: "fa fa-file-invoice-dollar text-blue",
     component: Profile,
     layout: "/admin"
   },
   {
     path: "/tables",
-    name: "Tables",
-    icon: "ni ni-bullet-list-67 text-red",
+    name: "Strategic Sourcing",
+    icon: "fa fa-coins text-blue",
     component: Tables,
     layout: "/admin"
   },
   {
-    path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: Login,
-    layout: "/auth"
-  },
-  {
-    path: "/register",
-    name: "Register",
-    icon: "ni ni-circle-08 text-pink",
-    component: Register,
-    layout: "/auth"
+    path: "/tables",
+    name: "Manage Asset",
+    icon: "fa fa-boxes text-blue",
+    component: Tables,
+    layout: "/admin"
   }
+  // {
+  //   path: "/login",
+  //   name: "Login",
+  //   icon: "ni ni-key-25 text-info",
+  //   component: Login,
+  //   layout: "/auth"
+  // },
+  // {
+  //   path: "/register",
+  //   name: "Register",
+  //   icon: "ni ni-circle-08 text-pink",
+  //   component: Register,
+  //   layout: "/auth"
+  // }
 ];
 export default routes;

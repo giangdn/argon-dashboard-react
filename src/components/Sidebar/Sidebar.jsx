@@ -24,6 +24,7 @@ import { PropTypes } from "prop-types";
 // reactstrap components
 import {
   Button,
+  Badge,
   Card,
   CardHeader,
   CardBody,
@@ -88,9 +89,19 @@ class Sidebar extends React.Component {
             tag={NavLinkRRD}
             onClick={this.closeCollapse}
             activeClassName="active"
+            className={
+              typeof prop.badge !== undefined && prop.isSub == true
+                ? "menu-sub-item"
+                : ""
+            }
           >
             <i className={prop.icon} />
             {prop.name}
+            {typeof prop.badge !== undefined && (
+              <Badge color="success" className="ml-2">
+                {prop.badge}
+              </Badge>
+            )}
           </NavLink>
         </NavItem>
       );
@@ -127,12 +138,15 @@ class Sidebar extends React.Component {
           </button>
           {/* Brand */}
           {logo ? (
-            <NavbarBrand className="pt-0" {...navbarBrandProps}>
+            <NavbarBrand className="pt-0 expenzing-brand" {...navbarBrandProps}>
               <img
                 alt={logo.imgAlt}
                 className="navbar-brand-img"
                 src={logo.imgSrc}
               />
+              <span className="h1 expenzing-logo m-0 ml-2">
+                Expenz<span className="i">i</span>ng
+              </span>
             </NavbarBrand>
           ) : null}
           {/* User */}

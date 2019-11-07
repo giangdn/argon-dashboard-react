@@ -1,6 +1,6 @@
 {
-  "short_name": "BLK Design System React",
-  "name": "BLK Design System React by Creative Tim",
+  "short_name": "Expenzing",
+  "name": "Expenzing: Sourcing, Procurement, Accounts Payable, Expense and Travel Management Software.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#12A8BE",
   "background_color": "#ffffff"
 }
